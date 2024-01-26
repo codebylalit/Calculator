@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+      
+      background: goldenrod;
+        margin: auto;
+    }
+.con{
+   text-align: center;
+}
+.row{
+margin: 8px;
+}
+.btn{
+    width: 66px;
+    padding: 20px;
+    margin: 0 3px;  
+    cursor: pointer;
+}
+
+.row input{
+   margin: 10px;
+   padding: 10px;
+   width: 212px;
+   font-size: large;
+}
+
+
+</style>
+<body>
+    <h1 style="text-align:center ; font-family: Verdana, Geneva, Tahoma, sans-serif;">Calculator</h1>
+    <div class="con">
+        <div class="row">
+            <input type="text" class="input">
+        </div>
+        <div class="row1">
+            <button class="btn">C</button>
+            <button class="btn">M+</button>
+            <button class="btn">M-</button>
+            <button class="btn">Tax</button>
+        </div>
+        <div class="row">
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button class="btn">*</button>
+        </div>
+        <div class="row">
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">6</button>
+            <button class="btn">-</button>
+        </div>
+        <div class="row">
+            <button class="btn">3</button>
+            <button class="btn">2</button>
+            <button class="btn">1</button>
+            <button class="btn">+</button>
+        </div>
+        <div class="row">
+            <button class="btn">0</button>
+            <button class="btn">/</button>
+            <button class="btn">%</button>
+            <button class="btn">=</button>
+        </div>
+    </div>
+    <script>
+let string = ""
+let button = document.querySelectorAll("button");
+Array.from(button).forEach((button)=>{
+    button.addEventListener("click",(e)=>{
+if(e.target.innerHTML=="="){
+    string=eval(string);
+    document.querySelector("input").value=string;
+}else if(e.target.innerHTML=="C"){
+    string='';
+    document.querySelector("input").value=string;
+}
+else{
+    string=string+e.target.innerHTML;
+    document.querySelector("input").value=string;
+}})})
+</script>
+</body>
+
+</html>
